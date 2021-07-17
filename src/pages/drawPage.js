@@ -21,8 +21,6 @@ const DrawPage = () => {
     const [exportWithDarkMode, setExportWithDarkMode] = useState(false);
     const [shouldAddWatermark, setShouldAddWatermark] = useState(false);
     const [theme, setTheme] = useState("light");
-    const [elements, setElements] = useState(initialData.elements);
-    const [drawState, setDrawSate] = useState(null);
 
     useEffect(() => {
       setInterval(() => handleSaveEveryTen(), 10000);
@@ -104,7 +102,7 @@ const DrawPage = () => {
           },
         };
         
-        let response = await axios.post("/api/upload", formData, config);
+        await axios.post("/api/upload", formData, config);
     }
 
     return (
@@ -168,11 +166,7 @@ const DrawPage = () => {
             <Excalidraw
               ref={excalidrawRef}
               initialData={initialData}
-              onChange={(elements, state) => {
-                    setElements(elements);
-                    setDrawSate(state);
-                }
-              }
+              onChange={(elements, state) => {}}
               onPointerUpdate={(payload) => null}
               onCollabButtonClick={() =>
                 window.alert("You clicked on collab button")

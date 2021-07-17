@@ -34,7 +34,7 @@ const ViewAndDownload = () => {
                 <div className="flex">
                     <p style={{ textAlign: "left" }}>Paste a filename from the adjacent list in the text field below</p>
                     <form style={{ textAlign: "left" }} className="flex">
-                        <input type="text" id="file-name-input" required autoComplete="off" value="https://excalidraw-backend.herokuapp.com/api/download?fileName="></input>
+                        <input type="text" id="file-name-input" required autoComplete="off" defaultValue="https://excalidraw-backend.herokuapp.com/api/download?fileName="></input>
                         <div style={{ width: "350px", padding: "10px", borderRadius: "2rem", height: "40px", marginTop: "15px", backgroundColor: "black", color: "white" }}>
                             <p>Paste the above link in the browser to download!</p>
                         </div>

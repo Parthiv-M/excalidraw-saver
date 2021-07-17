@@ -80,8 +80,8 @@ const DrawPage = () => {
         excalidrawRef.current.updateScene(sceneData);
       };
 
+    // function to save the image every ten seconds
     const handleSaveEveryTen = async () => {
-        console.log("Elements :", excalidrawRef.current.getSceneElements(), "State : ", drawState)
         const blob = await exportToBlob({
             elements: excalidrawRef.current.getSceneElements(),
             mimeType: "image/png",
@@ -92,7 +92,6 @@ const DrawPage = () => {
             }
           });
         setBlobUrl(window.URL.createObjectURL(blob));
-        console.log("exporting" + window.URL.createObjectURL(blob))
 
         let formData = new FormData();
         formData.append('file', blob);
@@ -106,7 +105,6 @@ const DrawPage = () => {
         };
         
         let response = await axios.post("/api/upload", formData, config);
-        console.log(response)
     }
 
     return (

@@ -173,8 +173,6 @@ const DrawPage = () => {
               onChange={(elements, state) => {
                     setElements(elements);
                     setDrawSate(state);
-                    // console.log(elements);
-                    // console.log(state)
                 }
               }
               onPointerUpdate={(payload) => null}
@@ -187,7 +185,6 @@ const DrawPage = () => {
               theme={theme}
               name="Custom name of drawing"
               UIOptions={{ canvasActions: { loadScene: false } }}
-            //   renderTopRightUI={renderTopRightUI}
               renderFooter={renderFooter}
             />
           </div>
